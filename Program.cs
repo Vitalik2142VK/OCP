@@ -8,16 +8,16 @@ namespace OCP
         {
             PaymentSystemIdRepository repository = new PaymentSystemIdRepository();
             OrderForm orderForm = new OrderForm(repository);
-            PaymentHandler paymentHandler = new PaymentHandler();
             IPaymentSystemFactory paymentSystemFactory = new PaymentSystemFactory();
 
             orderForm.ShowForm();
 
             PaymentSystemId systemId = orderForm.FindPaymentSystemId();
             IPaymentSystem paymentSystem = paymentSystemFactory.Create(systemId);
+            PaymentHandler paymentHandler = new PaymentHandler(paymentSystem);
 
-            paymentHandler.AcceptPayment(paymentSystem);
-            paymentHandler.ShowPaymentResult(paymentSystem);
+            paymentHandler.AcceptPayment();
+            paymentHandler.ShowPaymentResult();
 
             Console.ReadKey();
         }

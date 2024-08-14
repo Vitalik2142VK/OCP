@@ -4,16 +4,23 @@ namespace OCP
 {
     public class PaymentHandler
     {
-        public void AcceptPayment(IPaymentSystem paymentSystem)
+        private IPaymentSystem _paymentSystem;
+
+        public PaymentHandler(IPaymentSystem paymentSystem)
         {
-            paymentSystem.AcceptPayment();
+            _paymentSystem = paymentSystem ?? throw new ArgumentNullException(nameof(paymentSystem));
         }
 
-        public void ShowPaymentResult(IPaymentSystem paymentSystem)
+        public void AcceptPayment()
         {
-            Console.WriteLine($"Вы оплатили с помощью {paymentSystem.SystemId}");
+            _paymentSystem.AcceptPayment();
+        }
 
-            paymentSystem.CheckPayment();
+        public void ShowPaymentResult()
+        {
+            Console.WriteLine($"Вы оплатили с помощью {_paymentSystem.SystemId}");
+
+            _paymentSystem.CheckPayment();
 
             Console.WriteLine("Оплата прошла успешно!");
         }
