@@ -43,11 +43,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OCP\IPaymentSystemFactory.cs" />
+    <Compile Include="OCP\IPaymentSystem.cs" />
+    <Compile Include="OCP\OrderForm.cs" />
+    <Compile Include="OCP\PaymentHandler.cs" />
+    <Compile Include="OCP\PaymentSystemId.cs" />
+    <Compile Include="OCP\PaymentSystemIdRepository.cs" />
+    <Compile Include="OCP\PaymentCard.cs" />
+    <Compile Include="OCP\PaymentQiwi.cs" />
+    <Compile Include="OCP\PaymentWebMoney.cs" />
+    <Compile Include="OCP\PaymentSystemFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
