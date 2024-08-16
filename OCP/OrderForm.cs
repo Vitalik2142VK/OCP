@@ -24,7 +24,7 @@ namespace OCP
                 $"Какой системой вы хотите совершить оплату?");
         }
 
-        public PaymentSystemId FindPaymentSystemId()
+        public PaymentSystemId ChooseSystemId()
         {
             string input = Console.ReadLine();
 

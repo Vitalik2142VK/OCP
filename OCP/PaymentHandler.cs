@@ -6,9 +6,9 @@ namespace OCP
     {
         private IPaymentSystem _paymentSystem;
 
-        public PaymentHandler(IPaymentSystem paymentSystem)
+        public PaymentHandler(IPaymentSystemFactory factory, PaymentSystemId systemId)
         {
-            _paymentSystem = paymentSystem ?? throw new ArgumentNullException(nameof(paymentSystem));
+            _paymentSystem = factory.Create(systemId);
         }
 
         public void AcceptPayment()

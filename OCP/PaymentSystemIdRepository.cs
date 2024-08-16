@@ -5,13 +5,13 @@ namespace OCP
 {
     public class PaymentSystemIdRepository
     {
-        private PaymentSystemId[] _types;
+        private PaymentSystemId[] _systemIds;
         private string[] _idNames;
 
         public PaymentSystemIdRepository()
         {
-            _types = (PaymentSystemId[])Enum.GetValues(typeof(PaymentSystemId));
-            _idNames = _types.Select(t => t.ToString()).ToArray();
+            _systemIds = (PaymentSystemId[])Enum.GetValues(typeof(PaymentSystemId));
+            _idNames = _systemIds.Select(t => t.ToString()).ToArray();
         }
 
         public string[] GetIdNames()
@@ -21,7 +21,7 @@ namespace OCP
 
         public PaymentSystemId FindPaymentSystemId(string paymentSystemRepositId)
         {
-            return _types.Where(t => t.ToString().ToLower() == paymentSystemRepositId.ToLower()).First();
+            return _systemIds.Where(t => t.ToString().ToLower() == paymentSystemRepositId.ToLower()).First();
         }
     }
 }

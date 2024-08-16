@@ -12,9 +12,8 @@ namespace OCP
 
             orderForm.ShowForm();
 
-            PaymentSystemId systemId = orderForm.FindPaymentSystemId();
-            IPaymentSystem paymentSystem = paymentSystemFactory.Create(systemId);
-            PaymentHandler paymentHandler = new PaymentHandler(paymentSystem);
+            PaymentSystemId systemId = orderForm.ChooseSystemId();
+            PaymentHandler paymentHandler = new PaymentHandler(paymentSystemFactory, systemId);
 
             paymentHandler.AcceptPayment();
             paymentHandler.ShowPaymentResult();
