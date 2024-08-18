@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="factories\PaymentSystemId.cs" />
+    <Compile Include="OCP\factories\PaymentSystemId.cs" />
     <Compile Include="OCP\factories\CardPaymentFactory.cs" />
     <Compile Include="OCP\factories\IPaymentSystemRespository.cs" />
     <Compile Include="OCP\factories\IPaymentSystemFactory.cs" />
