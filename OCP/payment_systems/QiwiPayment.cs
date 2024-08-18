@@ -2,9 +2,9 @@
 
 namespace OCP
 {
-    public class PaymentQiwi : IPaymentSystem
+    public class QiwiPayment : IPaymentSystem
     {
-        public PaymentSystemId SystemId => PaymentSystemId.QIWI;
+        public string SystemId => PaymentSystemId.Qiwi;
 
         public void AcceptPayment()
         {

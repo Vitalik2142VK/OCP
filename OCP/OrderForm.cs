@@ -1,34 +1,34 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace OCP
 {
     public class OrderForm
     {
-        private PaymentSystemIdRepository _repository;
+        private IEnumerable<string> _paymentSystemIdNames;
 
-        public OrderForm(PaymentSystemIdRepository repository)
+        public OrderForm(IEnumerable<string> paymentSystemIdNames)
         {
-            _repository = repository ?? throw new ArgumentNullException(nameof(repository));
+            _paymentSystemIdNames = paymentSystemIdNames ?? throw new ArgumentNullException(nameof(paymentSystemIdNames));
         }
 
         public void ShowForm()
         {
-            string paymentSystemNames = "";
+            StringBuilder paymentSystemNames = new StringBuilder();
 
-            foreach (string nameType in _repository.GetIdNames())
+            foreach (string nameType in _paymentSystemIdNames)
             {
-                paymentSystemNames += nameType + "\n";
+                paymentSystemNames.Append(nameType).Append("\n");
             }
 
             Console.WriteLine($"Мы принимаем:\n{paymentSystemNames}\n\n" +
                 $"Какой системой вы хотите совершить оплату?");
         }
 
-        public PaymentSystemId ChooseSystemId()
+        public string ChooseSystemId()
         {
-            string input = Console.ReadLine();
-
-            return _repository.FindPaymentSystemId(input);
+            return Console.ReadLine();
         } 
     }
 }

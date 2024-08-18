@@ -2,7 +2,7 @@
 {
     public interface IPaymentSystem
     {
-        PaymentSystemId SystemId { get; }
+        string SystemId { get; }
 
         void AcceptPayment();
 

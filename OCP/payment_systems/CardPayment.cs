@@ -2,9 +2,9 @@
 
 namespace OCP
 {
-    public class PaymentCard : IPaymentSystem
+    public class CardPayment : IPaymentSystem
     {
-        public PaymentSystemId SystemId => PaymentSystemId.Card;
+        public string SystemId => PaymentSystemId.Card;
 
         public void AcceptPayment()
         {

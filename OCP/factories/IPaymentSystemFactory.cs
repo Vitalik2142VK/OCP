@@ -2,6 +2,6 @@
 {
     public interface IPaymentSystemFactory
     {
-        IPaymentSystem Create(PaymentSystemId systemId);        
+        IPaymentSystem Create();        
     }
 }

@@ -2,9 +2,9 @@
 
 namespace OCP
 {
-    public class PaymentWebMoney : IPaymentSystem
+    public class WebMoneyPayment : IPaymentSystem
     {
-        public PaymentSystemId SystemId => PaymentSystemId.WebMoney;
+        public string SystemId => PaymentSystemId.WebMoney;
 
         public void AcceptPayment()
         {
