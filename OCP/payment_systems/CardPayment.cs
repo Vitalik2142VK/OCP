@@ -4,7 +4,12 @@ namespace OCP
 {
     public class CardPayment : IPaymentSystem
     {
-        public string SystemId => PaymentSystemId.Card;
+        public CardPayment()
+        {
+            SystemId = PaymentSystemId.Card;
+        }
+
+        public string SystemId { get; private set; }
 
         public void AcceptPayment()
         {

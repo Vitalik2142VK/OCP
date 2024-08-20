@@ -8,6 +8,9 @@ namespace OCP
 
         public PaymentHandler(IPaymentSystemFactory factory)
         {
+            if (factory == null)
+                throw new ArgumentNullException(nameof(factory));
+
             _paymentSystem = factory.Create();
         }
 
