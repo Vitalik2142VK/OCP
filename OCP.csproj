@@ -43,11 +43,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OCP\factories\PaymentSystemId.cs" />
+    <Compile Include="OCP\factories\CardPaymentFactory.cs" />
+    <Compile Include="OCP\factories\IPaymentSystemRespository.cs" />
+    <Compile Include="OCP\factories\IPaymentSystemFactory.cs" />
+    <Compile Include="OCP\payment_systems\IPaymentSystem.cs" />
+    <Compile Include="OCP\OrderForm.cs" />
+    <Compile Include="OCP\PaymentHandler.cs" />
+    <Compile Include="OCP\payment_systems\CardPayment.cs" />
+    <Compile Include="OCP\payment_systems\QiwiPayment.cs" />
+    <Compile Include="OCP\payment_systems\WebMoneyPayment.cs" />
+    <Compile Include="OCP\factories\PaymentSystemRespository.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="OCP\factories\QiwiPaymentFactory.cs" />
+    <Compile Include="OCP\factories\WebMoneyPaymentFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
